@@ -1,0 +1,30 @@
+
+  _                   ______ _ _      
+ | |                 |  ____(_) |     
+ | |     ___   __ _  | |__   _| | ___ 
+ | |    / _ \ / _` | |  __| | | |/ _ \
+ | |___| (_) | (_| | | |    | | |  __/
+ |______\___/ \__, | |_|    |_|_|\___|
+               __/ |                  
+              |___/                   
+--------------------------------------
+start:            03-04-2023_13:24:13
+file:             __main__.py
+OS:               Windows
+User:             Napo_II
+--------------------------------------
+logNow:
+03-04-2023_13:24:16 --> The folder [11111] was created in the directory:
+  ->   E:/Pr0grame/My_ Pyhton/work_in_progress\11111
+03-04-2023_13:24:16 --> The folder [11111] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\11111\11111
+03-04-2023_13:24:16 --> The folder [README_img] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\11111\README_img
+03-04-2023_13:24:16 --> The folder [test] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\11111\test
+03-04-2023_13:24:16 --> 
+file [__funktion__.py] is created...
+03-04-2023_13:24:16 --> 
+file [__init__.py] is created...
+03-04-2023_13:24:16 --> 
+file [11111.py] is created...
