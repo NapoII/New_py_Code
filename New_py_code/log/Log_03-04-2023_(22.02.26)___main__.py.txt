@@ -1,0 +1,43 @@
+
+  _                   ______ _ _      
+ | |                 |  ____(_) |     
+ | |     ___   __ _  | |__   _| | ___ 
+ | |    / _ \ / _` | |  __| | | |/ _ \
+ | |___| (_) | (_| | | |    | | |  __/
+ |______\___/ \__, | |_|    |_|_|\___|
+               __/ |                  
+              |___/                   
+--------------------------------------
+start:            03-04-2023_22:02:26
+file:             __main__.py
+OS:               Windows
+User:             Napo_II
+--------------------------------------
+logNow:
+03-04-2023_22:02:28 --> Config loaded: [ folder = E:/Pr0grame/My_ Pyhton/work_in_progress ]
+03-04-2023_22:02:29 --> Config loaded: [ github_user = NapoII ]
+03-04-2023_22:02:29 --> The folder [6] was created in the directory:
+  ->   E:/Pr0grame/My_ Pyhton/work_in_progress\6
+03-04-2023_22:02:29 --> The folder [6] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\6\6
+03-04-2023_22:02:29 --> The folder [README_img] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\6\README_img
+03-04-2023_22:02:29 --> The folder [test] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\6\test
+03-04-2023_22:02:29 --> 
+file [__funktion__.py] is created...with conetnt:\test
+03-04-2023_22:02:29 --> 
+file [__init__.py] is created...with conetnt:\
+03-04-2023_22:02:29 --> 
+file [6.py] is created...with conetnt:\test
+03-04-2023_22:02:29 --> 
+file [.gitignore] is created...with conetnt:\test
+03-04-2023_22:02:29 --> 
+file [test.py] is created...with conetnt:\
+03-04-2023_22:02:29 --> Config loaded: [ github_user = NapoII ]
+03-04-2023_22:02:29 --> Config loaded: [ discord_link = https://discord.gg/knTKtKVfnr ]
+03-04-2023_22:02:29 --> Config loaded: [ discord_ID = 190307701169979393 ]
+03-04-2023_22:02:30 --> Image successfully copied!
+03-04-2023_22:02:30 --> 
+file [README.md] is created...with conetnt:\[![NapoII](E:\Pr0grame\My_ Pyhton\work_in_progress\6\README_img)](https://github.com/NapoII)# {repro_Git_owner}
+[![downloads/total](https://img.shields.io/github/downloads/NapoII/NapoII/total)](https://github.com/NapoII/NapoII/archive/refs/heads/main.zip)[![github/repo-size](https://img.shields.io/github/repo-size/NapoII/NapoII)](https://github.com/NapoII/NapoII/archive/refs/heads/main.zip)[![github/license](https://github.com/NapoII/NapoII/blob/main/LICENSE)](https://img.shields.io/github/license/NapoII/NapoII)[![github/last-commit](https://img.shields.io/github/downloads/NapoII/NapoII/total)](https://img.shields.io/github/issues/NapoII/NapoII?style=plastic)[![github/issues](https://github.com/NapoII/NapoII/issues)](https://img.shields.io/github/issues/NapoII/NapoII?style=plastic)[![github/stars](https://img.shields.io/github/stars/NapoII/NapoII?style=social)](https://github.com/NapoII/NapoII/stargazers)[![discord](190307701169979393)](https://discord.gg/knTKtKVfnr)

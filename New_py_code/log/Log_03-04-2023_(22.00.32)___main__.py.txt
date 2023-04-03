@@ -1,0 +1,42 @@
+
+  _                   ______ _ _      
+ | |                 |  ____(_) |     
+ | |     ___   __ _  | |__   _| | ___ 
+ | |    / _ \ / _` | |  __| | | |/ _ \
+ | |___| (_) | (_| | | |    | | |  __/
+ |______\___/ \__, | |_|    |_|_|\___|
+               __/ |                  
+              |___/                   
+--------------------------------------
+start:            03-04-2023_22:00:32
+file:             __main__.py
+OS:               Windows
+User:             Napo_II
+--------------------------------------
+logNow:
+03-04-2023_22:00:34 --> Config loaded: [ folder = E:/Pr0grame/My_ Pyhton/work_in_progress ]
+03-04-2023_22:00:34 --> Config loaded: [ github_user = NapoII ]
+03-04-2023_22:00:34 --> The folder [3] was created in the directory:
+  ->   E:/Pr0grame/My_ Pyhton/work_in_progress\3
+03-04-2023_22:00:34 --> The folder [3] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\3\3
+03-04-2023_22:00:34 --> The folder [README_img] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\3\README_img
+03-04-2023_22:00:34 --> The folder [test] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\3\test
+03-04-2023_22:00:34 --> 
+file [__funktion__.py] is created...with conetnt:\test
+03-04-2023_22:00:34 --> 
+file [__init__.py] is created...with conetnt:\
+03-04-2023_22:00:34 --> 
+file [3.py] is created...with conetnt:\test
+03-04-2023_22:00:34 --> 
+file [.gitignore] is created...with conetnt:\test
+03-04-2023_22:00:34 --> 
+file [test.py] is created...with conetnt:\
+03-04-2023_22:00:34 --> Config loaded: [ github_user = NapoII ]
+03-04-2023_22:00:34 --> Config loaded: [ discord_link = https://discord.gg/knTKtKVfnr ]
+03-04-2023_22:00:34 --> Config loaded: [ discord_ID = 190307701169979393 ]
+03-04-2023_22:00:35 --> Image successfully copied!
+03-04-2023_22:00:35 --> 
+file [README.md] is created...with conetnt:\

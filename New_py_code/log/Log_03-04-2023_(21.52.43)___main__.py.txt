@@ -1,0 +1,42 @@
+
+  _                   ______ _ _      
+ | |                 |  ____(_) |     
+ | |     ___   __ _  | |__   _| | ___ 
+ | |    / _ \ / _` | |  __| | | |/ _ \
+ | |___| (_) | (_| | | |    | | |  __/
+ |______\___/ \__, | |_|    |_|_|\___|
+               __/ |                  
+              |___/                   
+--------------------------------------
+start:            03-04-2023_21:52:43
+file:             __main__.py
+OS:               Windows
+User:             Napo_II
+--------------------------------------
+logNow:
+03-04-2023_21:52:45 --> Config loaded: [ folder = E:/Pr0grame/My_ Pyhton/work_in_progress ]
+03-04-2023_21:52:46 --> Config loaded: [ github_user = NapoII ]
+03-04-2023_21:52:46 --> The folder [777] was created in the directory:
+  ->   E:/Pr0grame/My_ Pyhton/work_in_progress\777
+03-04-2023_21:52:46 --> The folder [777] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\777\777
+03-04-2023_21:52:46 --> The folder [README_img] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\777\README_img
+03-04-2023_21:52:46 --> The folder [test] was created in the directory:
+  ->   E:\Pr0grame\My_ Pyhton\work_in_progress\777\test
+03-04-2023_21:52:46 --> 
+file [__funktion__.py] is created...
+03-04-2023_21:52:46 --> 
+file [__init__.py] is created...
+03-04-2023_21:52:46 --> 
+file [777.py] is created...
+03-04-2023_21:52:46 --> 
+file [.gitignore] is created...
+03-04-2023_21:52:46 --> 
+file [test.py] is created...
+03-04-2023_21:52:46 --> Config loaded: [ github_user = NapoII ]
+03-04-2023_21:52:46 --> Config loaded: [ discord_link = https://discord.gg/knTKtKVfnr ]
+03-04-2023_21:52:46 --> Config loaded: [ discord_ID = 190307701169979393 ]
+03-04-2023_21:52:47 --> Image successfully copied!
+03-04-2023_21:52:47 --> 
+file [README.md] is created...
