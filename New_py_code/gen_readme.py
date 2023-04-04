@@ -35,11 +35,9 @@ def readme_gen (name, save_path, Readme_top, readme_img_folder, config_dir, ):
 
     
 
-    readme_code += f"""<p align="center">
-<a href="https://github.com/{Git_owner}">
-    <img src="https://raw.githubusercontent.com/{Git_owner}/{name}/main/README_img/Readme_top.png"  alt=f"NapoII">
-</a>
-</p>"""
+    readme_code += add_image_to_markdown(f"github/{Git_owner}", f"https://raw.githubusercontent.com/{Git_owner}/{name}/main/README_img/Readme_top.png", f"https://github.com/{Git_owner}")+"\n"
+
+
     readme_code += f"\n# {name}\n\n"
     badge_line = ""
 
@@ -84,7 +82,7 @@ def readme_gen (name, save_path, Readme_top, readme_img_folder, config_dir, ):
     Table_of_Contents ="""## 📝 Table of Contents
 + [Demo / Working](#demo)
 + [Install](#usage)
-+ [How it works](#work)
++ [How it works](#Use)
 + [Lizenz](#Lizenz)"""
 
     readme_code += Table_of_Contents +"\n"
@@ -96,10 +94,15 @@ coming soon...
 ```cmd
 git clone https://github.com/{Git_owner}/{name}
 pip install -r requirements.txt
-{name}.py
 ```
 ## 💭 How it works <a name = "Use"></a>
-coming soon...
+
+start {name}.py directly from the folder or run in cmd:
+```cmd
+cd <local path of {name}>
+python {name}.py
+```
+
 ## 📚 Lizenz <a name = "Lizenz"></a>
 MIT License
 
@@ -125,8 +128,5 @@ SOFTWARE
     """
     readme_code += rest_fill +"\n"
 
-
-
-    
     Create_File("README.md", save_path, readme_code)
     return save_path

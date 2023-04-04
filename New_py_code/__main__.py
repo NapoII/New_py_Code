@@ -37,4 +37,29 @@ Create_File(f".gitignore", projekt_folder, __main__temp)
 test_py_temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "test_py-temp.txt")
 Create_File(f"test.py", test_folder, test_py_temp)
 
-readme_gen (gituser_default, projekt_folder, Readme_top, readme_img_folder, file_path_config )
+readme_gen (new_py_name, projekt_folder, Readme_top, readme_img_folder, file_path_config )
+
+setup_py_content = f"""from setuptools import setup, find_packages
+
+with open("README.md") as readme_file:
+    readme = readme_file.read()
+
+setup(
+    name='{new_py_name}',
+    version='0.1.0',    
+    description=("!!! add short description !!!"),
+    long_description = readme,
+    long_description_content_type="text/markdown",
+    url='https://github.com/{gituser_default}/{new_py_name}',
+    author='{gituser_default}',
+    author_email='!!! add mail !!!,
+    license='MIT License',
+    packages="!!! add content from requirements.txt !!!",
+    install_requires= [],
+
+    classifiers=[
+    !!! add classifiers !!!
+        ],)"""
+
+Create_File(f"setup.py", projekt_folder, setup_py_content)
+Create_File(f"requirements.txt", projekt_folder, "#add required py packages")
