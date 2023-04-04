@@ -1,1 +1,12 @@
-test
+
+-----------------------------------------------
+!!! ADD MUST HAVE INFO !!
+------------------------------------------------
+"""
+
+#imports
+import os
+import sys
+
+from __funktion__ import *
+

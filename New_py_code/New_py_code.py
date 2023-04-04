@@ -2,7 +2,7 @@ import pyautogui
 from __funktion__ import *
 import sys
 from gen_readme import readme_gen
-
+import os
 
 file_path = os.path.normpath(os.path.dirname(sys.argv[0]))
 file_path_config = file_path + os.path.sep + "cfg.ini"
@@ -25,14 +25,30 @@ test_folder = Folder_gen("test", projekt_folder)
 __funktion__temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep+"__funktion__-temp.txt")
 Create_File("__funktion__.py", py_name_folder, __funktion__temp)
 
-__init__temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "__init__-temp.txt")
+
+
+full_doku_on_str =  f'"""Full Doku on: https://github.com/{gituser_default}/{new_py_name}"'
+
+__init__temp = full_doku_on_str
+__init__temp += Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "__init__-temp.txt")
+__init__temp += f" \"{gituser_default}\""
 Create_File("__init__.py", py_name_folder, __init__temp)
 
-__main__temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "__main__-temp.txt")
+__main__temp = full_doku_on_str
+__main__temp += Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "__main__-temp.txt")
+__main__temp += f"# {new_py_name}.py\nlog(f'Programme has been started!','green')\n"
 Create_File(f"{new_py_name}.py", py_name_folder, __main__temp)
 
-gitignor = Read_File_Out(file_path + os.path.sep +"Templates" + os.path.sep + ".gitignor-temp.txt")
-Create_File(f".gitignore", projekt_folder, __main__temp)
+gitignor = f".{new_py_name}.egg-info"
+gitignor += Read_File_Out(file_path + os.path.sep +"Templates" + os.path.sep + ".gitignor-temp.txt")
+Create_File(f".gitignore", projekt_folder, gitignor)
+
+requirements_content = Read_File_Out(file_path + os.path.sep +"Templates" + os.path.sep + "requirements-temp.txt")
+Create_File(f"requirements.txt", projekt_folder, requirements_content)
+
+
+TODO_md_txt_content = Read_File_Out(file_path + os.path.sep +"Templates" + os.path.sep + "TODO_md.txt")
+Create_File(f"TODO.md", projekt_folder, TODO_md_txt_content)
 
 test_py_temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "test_py-temp.txt")
 Create_File(f"test.py", test_folder, test_py_temp)
@@ -47,12 +63,12 @@ with open("README.md") as readme_file:
 setup(
     name='{new_py_name}',
     version='0.1.0',    
-    description=("!!! add short description !!!"),
+    description="!!! add short description !!!",
     long_description = readme,
     long_description_content_type="text/markdown",
     url='https://github.com/{gituser_default}/{new_py_name}',
     author='{gituser_default}',
-    author_email='!!! add mail !!!,
+    author_email='!!! add mail !!!',
     license='MIT License',
     packages="!!! add content from requirements.txt !!!",
     install_requires= [],
@@ -62,4 +78,5 @@ setup(
         ],)"""
 
 Create_File(f"setup.py", projekt_folder, setup_py_content)
-Create_File(f"requirements.txt", projekt_folder, "#add required py packages")
+
+

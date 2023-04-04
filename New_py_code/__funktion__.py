@@ -4,6 +4,11 @@ import os
 from configparser import ConfigParser
 import shutil
 
+if __name__ == "__funktion__":
+    log("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
+else:
+    pass
+
 def read_config(config_dir, section, option):
     """Reads a specific option from a config file in a specific section.
 
@@ -75,7 +80,6 @@ def Create_File(File_name, save_path, Inhalt):
         file1 = open(complete_Path_Text, "w", encoding='utf-8')
         # toFile = input("Write what you want into the field")                   # File input def.
         # File is filled with input
-        print(f"1111111111 >>>>>>>>>>>>\n{Inhalt}")
         file1.write(f"{Inhalt}")
         file1.close()
         log(f"\nfile [{File_name}] is created...with conetnt:\{Inhalt}","b")
@@ -92,7 +96,7 @@ def Read_File_Out(dir):
     Returns:
     - content (str): The contents of the file as a string.
     """
-    with open(dir, 'r') as f:
+    with open(dir, 'r', encoding='utf-8') as f:
         content = f.read()
 
     return content
@@ -114,7 +118,6 @@ def copy_image(source_file, dest_file) -> None:
         shutil.copy(source_file, dest_file)
         file = dest_file
         log(f"Image [{file}] successfully copied!", "b")
-        print(f">>>>>>>> {dest_file} ")
         return file
     except IOError as e:
         log(f"Error when copying the file: {e}", "r")
