@@ -50,7 +50,21 @@ run Code New_py_Code.py
 ```
 
 ## Example
-
+Files/ folders created by New_py_Code: 
+```folder
+TEST/
+┣━ README_img/
+┃ ┗━ Readme_top.png
+┣━ TEST/
+┃ ┣━ TEST.py
+┃ ┣━ __funktion__.py
+┃ ┗━ __init__.py
+┣━ .gitignore
+┣━ README.md
+┣━ requirements.txt
+┣━ setup.py
+┗━ TODO.md
+```
 ### TODO
 
 ---
