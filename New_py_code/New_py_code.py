@@ -25,7 +25,7 @@ readme_img_folder = Folder_gen("README_img", projekt_folder)
 test_folder = Folder_gen("test", projekt_folder)
 
 
-util_folder = Folder_gen("util", projekt_folder)
+util_folder = Folder_gen("util", py_name_folder)
 
 full_doku_on_str =  f'"""Full Doku on: https://github.com/{gituser_default}/{new_py_name}"'
 
@@ -37,7 +37,9 @@ Create_File("__init__.py", util_folder, __init__temp)
 __funktion__temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep+"__funktion__-temp.txt")
 Create_File("__funktion__.py", util_folder, __funktion__temp)
 
-
+cfg_folder = Folder_gen("cfg", py_name_folder)
+cfg_temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep+"cfg_temp.txt")
+Create_File("config.ini", cfg_folder, cfg_temp)
 
 
 __main__temp = full_doku_on_str
