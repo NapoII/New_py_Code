@@ -128,5 +128,10 @@ SOFTWARE
     """
     readme_code += rest_fill +"\n"
 
+    nice_end = """<p align="center">
+<img src="https://raw.githubusercontent.com/NapoII/NapoII/233630a814f7979f575c7f764dbf1f4804b05332/Bottom.svg" alt="Github Stats" />
+</p>
+"""
+    readme_code += nice_end
     Create_File("README.md", save_path, readme_code)
     return save_path

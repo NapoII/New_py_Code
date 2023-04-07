@@ -1,4 +1,6 @@
 """
+Use: - from util.__funktion__ import *
+
 ChatGPT promt for docstrgs:
 
 write me a .py docstr ("""""") with the content:

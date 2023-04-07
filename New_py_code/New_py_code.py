@@ -3,6 +3,8 @@ from __funktion__ import *
 import sys
 from gen_readme import readme_gen
 import os
+import webbrowser
+from pandas.io import clipboard
 
 file_path = os.path.normpath(os.path.dirname(sys.argv[0]))
 file_path_config = file_path + os.path.sep + "cfg.ini"
@@ -22,17 +24,21 @@ py_name_folder = Folder_gen(new_py_name, projekt_folder)
 readme_img_folder = Folder_gen("README_img", projekt_folder)
 test_folder = Folder_gen("test", projekt_folder)
 
-__funktion__temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep+"__funktion__-temp.txt")
-Create_File("__funktion__.py", py_name_folder, __funktion__temp)
 
-
+util_folder = Folder_gen("util", projekt_folder)
 
 full_doku_on_str =  f'"""Full Doku on: https://github.com/{gituser_default}/{new_py_name}"'
 
 __init__temp = full_doku_on_str
 __init__temp += Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "__init__-temp.txt")
 __init__temp += f" \"{gituser_default}\""
-Create_File("__init__.py", py_name_folder, __init__temp)
+Create_File("__init__.py", util_folder, __init__temp)
+
+__funktion__temp = Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep+"__funktion__-temp.txt")
+Create_File("__funktion__.py", util_folder, __funktion__temp)
+
+
+
 
 __main__temp = full_doku_on_str
 __main__temp += Read_File_Out(file_path + os.path.sep + "Templates" + os.path.sep + "__main__-temp.txt")
@@ -79,4 +85,10 @@ setup(
 
 Create_File(f"setup.py", projekt_folder, setup_py_content)
 
+
+
+
+webbrowser.open('file:///' + projekt_folder)
+clipboard.copy(projekt_folder)
+log("The project was created and the folder address was added to the clipboard..","g")
 

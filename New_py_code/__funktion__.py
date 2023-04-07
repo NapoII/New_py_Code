@@ -4,10 +4,37 @@ import os
 from configparser import ConfigParser
 import shutil
 
+
+def Read_File_Out(dir):
+    """
+    Reads the contents of a file located at the given directory path and returns it as a string.
+
+    Args:
+    - dir (str): The directory path of the file to be read.
+
+    Returns:
+    - content (str): The contents of the file as a string.
+
+    Example usage:
+    >>> file_path = "/path/to/file.txt"
+    >>> content = Read_File_Out(file_path)
+    >>> print(content)
+    'This is the content of the file.'
+    """
+
+
+def Read_File_Out(dir):
+    with open(dir, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    return content
+
+
 if __name__ == "__funktion__":
     log("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
 else:
     pass
+
 
 def read_config(config_dir, section, option):
     """Reads a specific option from a config file in a specific section.
@@ -82,7 +109,7 @@ def Create_File(File_name, save_path, Inhalt):
         # File is filled with input
         file1.write(f"{Inhalt}")
         file1.close()
-        log(f"\nfile [{File_name}] is created...with conetnt:\{Inhalt}","b")
+        log(f"\nfile [{File_name}] is created...with conetnt:\{Inhalt}", "b")
         return complete_Path_Text
 
 
