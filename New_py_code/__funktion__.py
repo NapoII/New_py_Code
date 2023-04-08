@@ -3,6 +3,7 @@ from logNow import log
 import os
 from configparser import ConfigParser
 import shutil
+import sys
 
 
 def Read_File_Out(dir):
@@ -28,12 +29,6 @@ def Read_File_Out(dir):
         content = f.read()
 
     return content
-
-
-if __name__ == "__funktion__":
-    log("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
-else:
-    pass
 
 
 def read_config(config_dir, section, option):
@@ -148,3 +143,31 @@ def copy_image(source_file, dest_file) -> None:
         return file
     except IOError as e:
         log(f"Error when copying the file: {e}", "r")
+
+
+def cheack_config(default_long_Str):
+    """
+    Generate a config file path in the 'cfg' directory of the current main file's directory.
+    
+    Args:
+    - default_long_Str (str): A long string representing the default configuration
+    
+    Returns:
+    - config_path (str): The absolute path to the generated config file
+    
+    Example Usage:
+    >>> default_config = "This is the default configuration"
+    >>> check_config(default_config)
+    '/path/to/main_dir/cfg/config.ini'
+    """
+    main_file = sys.modules['__main__'].__file__
+    main_dir = os.path.dirname(main_file)
+    config_path =  Folder_gen("cfg", main_dir)
+    config_path = Create_File("config.ini", config_path, default_long_Str)
+    return config_path
+
+if __name__ == "__funktion__":
+    log("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
+else:
+    cheack_config("""[default_long_Str]
+    test = 1""")

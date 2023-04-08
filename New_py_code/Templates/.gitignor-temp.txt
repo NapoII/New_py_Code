@@ -1,11 +1,12 @@
 
-
 **/build/
 **/dist/
 **/log/
 **/cfg/
 .vscode/*
-
+**/__pycache__/
+*.ini
+!__ini__.py
 
 #  Git Ignore File
 # 
