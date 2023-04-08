@@ -5,7 +5,7 @@ import sys
 from sys import addaudithook
 
 import pyautogui
-from util.__funktion__ import *
+from __funktion__ import *
 
 
 def is_default_import(name):
