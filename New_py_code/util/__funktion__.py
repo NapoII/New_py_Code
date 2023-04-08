@@ -169,5 +169,10 @@ def cheack_config(default_long_Str):
 if __name__ == "__funktion__":
     log("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
 else:
-    cheack_config("""[default_long_Str]
-    test = 1""")
+    cheack_config("""[default]
+folder = C:\\
+
+[readme]
+github_user = Git_User
+discord_link = discord.gg
+discord_ID = 123""")

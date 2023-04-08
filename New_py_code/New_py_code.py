@@ -8,7 +8,7 @@ from util.gen_readme import readme_gen
 from pandas.io import clipboard
 
 file_path = os.path.normpath(os.path.dirname(sys.argv[0]))
-file_path_config = file_path + os.path.sep + "cfg.ini"
+file_path_config = file_path + os.path.sep + "cfg"+ os.path.sep +"config.ini"
 file_path_Bilder = file_path + os.path.sep + "Bilder" + os.path.sep
 Readme_top = file_path + os.path.sep + "Templates" + os.path.sep+"Readme_top.png"
 file_path_Work_Folder = file_path + "/Work_Folder/"
@@ -43,9 +43,9 @@ __funktion__temp = Read_File_Out(
 Create_File("__funktion__.py", util_folder, __funktion__temp)
 
 cfg_folder = Folder_gen("cfg", py_name_folder)
-cfg_temp = Read_File_Out(file_path + os.path.sep +
-                         "Templates" + os.path.sep+"cfg_temp.txt")
-Create_File("config.ini", cfg_folder, cfg_temp)
+config_temp = Read_File_Out(file_path + os.path.sep +
+                         "Templates" + os.path.sep+"config_temp.txt")
+Create_File("config.ini", cfg_folder, config_temp)
 
 
 __main__temp = full_doku_on_str
