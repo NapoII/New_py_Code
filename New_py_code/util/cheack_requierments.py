@@ -3,9 +3,9 @@ import builtins
 import keyword
 import sys
 from sys import addaudithook
-import pyautogui
 
-from __funktion__ import *
+import pyautogui
+from util.__funktion__ import *
 
 
 def is_default_import(name):
@@ -18,7 +18,7 @@ def is_default_import(name):
     # Check if the name is in the list of default imports
     if name in default_imports:
         return True
-    
+
     return False
 
 
@@ -37,7 +37,6 @@ def extract_import_name(import_str):
     return import_name
 
 
-
 def parse_string_by_line(input_string):
     """
     Parses a given string line by line and returns a list of the lines.
@@ -45,7 +44,9 @@ def parse_string_by_line(input_string):
     lines = input_string.strip().split("\n")
     return lines
 
-requirements = pyautogui.prompt(text='imputt the ctx from the requirements ', title='requirements' , default='')
+
+requirements = pyautogui.prompt(
+    text='imputt the ctx from the requirements ', title='requirements', default='')
 requirements = parse_string_by_line(requirements)
 
 import_list_len = len(requirements)
@@ -61,12 +62,9 @@ while True:
     item = extract_import_name(item)
     print(item)
     x = is_default_import(item)
-    print (item)
+    print(item)
     if x == True:
-        new_requirements.insert(0,item)
+        new_requirements.insert(0, item)
     print(f"{x}\n")
 
 print(new_requirements)
-
-
-

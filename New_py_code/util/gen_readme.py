@@ -1,4 +1,4 @@
-from __funktion__ import *
+from util.__funktion__ import *
 import pyautogui
 import sys
 

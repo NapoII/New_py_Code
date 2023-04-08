@@ -3,8 +3,8 @@ import sys
 import webbrowser
 
 import pyautogui
-from __funktion__ import *
-from gen_readme import readme_gen
+from util.__funktion__ import *
+from util.gen_readme import readme_gen
 from pandas.io import clipboard
 
 file_path = os.path.normpath(os.path.dirname(sys.argv[0]))
