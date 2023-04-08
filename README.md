@@ -52,18 +52,18 @@ run Code New_py_Code.py
 ## Example
 Files/ folders created by New_py_Code: 
 ```folder
-Test_1234/
+Test123/
 ┣ README_img/
 ┃ ┗ Readme_top.png
 ┣ test/
 ┃ ┗ test.py
-┣ Test_1234/
+┣ Test123/
 ┃ ┣ cfg/
 ┃ ┃ ┗ config.ini
 ┃ ┣ util/
 ┃ ┃ ┣ __funktion__.py
 ┃ ┃ ┗ __init__.py
-┃ ┗ Test_1234.py
+┃ ┗ Test123.py
 ┣ .gitignore
 ┣ README.md
 ┣ requirements.txt
