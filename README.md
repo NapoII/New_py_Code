@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/NapoII">
-    <img src="Readme_top.png"  alt="NapoII">
+    <img src="README_img/Readme_top.png"  alt="NapoII">
 </a>
 </p>
 
