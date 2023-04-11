@@ -16,6 +16,7 @@
 - [ ] Create remote access to the repository with Git Bash and push the project to GitHub.
     ```Git Bash
     git remote o https://github.com/<GitHub User name>/<repository name>
+    git pull o main --allow-unrelated-histories
     git push o main
     ```
 - [ ] ☕ Now that the base is in place Treat yourself to a cup of tea.
