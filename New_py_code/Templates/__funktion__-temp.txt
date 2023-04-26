@@ -3,10 +3,14 @@ Use: - from util.__funktion__ import *
 
 ChatGPT promt for docstrgs:
 
+In copy code mode,
+
 write me a .py docstr ("""""") with the content:
-Args, Returns, Example Usage for the code in eng.
-Use for Args and Returns "- " for a listing and for Example Usage: ">>> ".
+Args, Returns and Example Usage.
+For Args and Returns create a list with "- ".
+and for Example Usage create a list with ">>>  ".
 Here is the code:
+
 
 """
 
@@ -19,39 +23,66 @@ import time
 import sys
 
 
-def read_config(config_dir, section, option):
-    """Reads a specific option from a config file in a specific section.
+def read_config(config_dir, section, option, arg=None):
+    """Reads a configuration file and returns the specified value as the desired data type.
 
-    Args:
-    - config_dir (str): The path of the config file.
-    - section (str): The section where the searched option is located.
-    - option (str): The name of the option being searched for.
+Args:
+- config_dir (str): The directory where the configuration file is located.
+- section (str): The section of the configuration file where the option is located.
+- option (str): The option to retrieve from the configuration file.
+- arg (str, optional): The desired data type of the retrieved value. Can be "float", "int", or "tuple". Defaults to None.
 
-    Returns:
-    - str: The value of the searched option.
+Returns:
+- If arg is not provided: the value of the specified option as a string.
+- If arg is "float": the value of the specified option as a float.
+- If arg is "int": the value of the specified option as an integer.
+- If arg is "tuple": the value of the specified option as a tuple of integers.
 
-    Example Usage:
-        Assuming you have a config file named 'example_config.ini' that looks like this:
+Example Usage:
+>>> read_config("config.ini", "database", "port")
+'5432'
 
-        - [database]
-        - host = localhost
-        - port = 5432
-        - username = dbuser
-        - password = dbpass
+>>> read_config("config.ini", "database", "port", "int")
+5432
 
-        You can use the function to read the value of the 'host' option in the 'database' section like this:
+>>> read_config("config.ini", "database", "credentials", "tuple")
+(123456, 'password')
+"""
 
-        >>> read_config('example_config.ini', 'database', 'host')
-        'localhost'
-    """
+    if arg == "float":
+        config = ConfigParser()
+        config.read(config_dir)
+        load_config = (config[section][option])
+        config_float = float(load_config)
+        log(f"Config loaded: [ ({option})  = ({config_float}) ] conv to float", "g")
 
-    config = ConfigParser()
-    config.read(config_dir)
-    load_config = (config[section][option])
+        return config_int
+    if arg == "int":
+        config = ConfigParser()
+        config.read(config_dir)
+        load_config = (config[section][option])
+        config_int = int(load_config)
+        log(f"Config loaded: [ ({option})  = ({config_tuple}) ] conv to int", "g")
 
-    log("Config loaded: [ "+(option) + " = " + (load_config)+" ]", "g")
+        return config_int
+    
+    if arg == "tuple":
+        config = ConfigParser()
+        config.read(config_dir)
+        load_config = (config[section][option])
+        config_tuple = tuple(map(int, load_config.split(",")))
+        log(f"Config loaded: [ ({option})  = ({config_tuple}) ] conv to tuple", "g")
 
-    return load_config
+        return config_tuple
+    
+    else:
+        config = ConfigParser()
+        config.read(config_dir)
+        load_config = (config[section][option])
+
+        log(f"Config loaded: [ ({option})  = ({load_config}) ]", "g")
+
+        return load_config
 
 
 def write_config(config_dir, section, Key, option):
