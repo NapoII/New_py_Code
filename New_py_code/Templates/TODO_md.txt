@@ -8,14 +8,14 @@
     ```Git Bash
     git init
     git add.
-    git commit -"Hello world"
+    git commit -m "Hello world"
     ```
 - [ ] Create a new repository on gitHub: https://github.com/new
 - [ ] Add the desired licence, for example: `MIT License` 
 
 - [ ] Create remote access to the repository with Git Bash and push the project to GitHub.
     ```Git Bash
-    git remote o https://github.com/<GitHub User name>/<repository name>
+    git remote add o https://github.com/<GitHub User name>/<repository name>
     git pull o main --allow-unrelated-histories
     git push o main
     ```
