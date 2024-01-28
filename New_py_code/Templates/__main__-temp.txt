@@ -15,8 +15,8 @@ from util.__funktion__ import *
 #### pre Var
 
 file_path = os.path.normpath(os.path.dirname(sys.argv[0]))
-config_dir = file_path + os.path.sep + "config"+ os.path.sep +"config.ini"
-
+config_dir = file_path + os.path.sep + "cfg"+ os.path.sep +"config.ini"
+config_dir = new_path(config_dir)
 BSP_config = read_config(config_dir, "Test", "abc")
 
 

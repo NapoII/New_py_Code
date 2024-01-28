@@ -41,6 +41,27 @@ def new_path(base_path, *additional_paths):
     return os.path.normpath(combined_path)
 
 
+def new_path(base_path, *additional_paths):
+    """
+    Combines paths based on a base and optional additional paths.
+    
+    Args:
+        base_path (str): The base path.
+        *additional_paths (str): Any number of additional paths.
+        
+    Returns:
+        str: The combined and normalised path.
+    """
+    # Normalise the base path
+    base_path = os.path.normpath(base_path)
+    
+    # Add all additional paths and create the combined path
+    combined_path = os.path.join(base_path, *additional_paths)
+    
+    # Normalise and return the combined path
+    return os.path.normpath(combined_path)
+
+
 def read_config(config_dir, section, option, arg=None):
     """Reads a configuration file and returns the specified value as the desired data type.
 
