@@ -1,10 +1,10 @@
-import logNow
-from logNow import log
+
 import os
 from configparser import ConfigParser
 import shutil
 import sys
-
+from PIL import Image, ImageDraw, ImageFont
+import re
 
 def Read_File_Out(dir):
     """
@@ -47,7 +47,7 @@ def read_config(config_dir, section, option):
     config.read(config_dir)
     load_config = (config[section][option])
 
-    log("Config loaded: [ "+(option) + " = " + (load_config)+" ]", "g")
+    print("Config loaded: [ "+(option) + " = " + (load_config)+" ]", "g")
 
     return load_config
 
@@ -76,7 +76,7 @@ def Folder_gen(Folder_Name, Folder_dir):
         print("  ->   " + str(full_path))
     else:                                               # Creates folder if not available
         os.makedirs(full_path)
-        log(f"The folder [{folder}] was created in the directory:\n  ->   {full_path}", "b")
+        print(f"The folder [{folder}] was created in the directory:\n  ->   {full_path}", "b")
         print("\n")
     return(os.path.normpath(full_path))
 
@@ -104,7 +104,7 @@ def Create_File(File_name, save_path, Inhalt):
         # File is filled with input
         file1.write(f"{Inhalt}")
         file1.close()
-        log(f"\nfile [{File_name}] is created...with conetnt:\{Inhalt}", "b")
+        print(f"\nfile [{File_name}] is created...with conetnt:\{Inhalt}", "b")
         return complete_Path_Text
 
 
@@ -139,15 +139,15 @@ def copy_image(source_file, dest_file) -> None:
     try:
         shutil.copy(source_file, dest_file)
         file = dest_file
-        log(f"Image [{file}] successfully copied!", "b")
+        print(f"Image [{file}] successfully copied!", "b")
         return file
     except IOError as e:
-        log(f"Error when copying the file: {e}", "r")
+        print(f"Error when copying the file: {e}", "r")
 
 
 def cheack_config(default_long_Str):
     """
-    Generate a config file path in the 'cfg' directory of the current main file's directory.
+    Generate a config file path in the 'config' directory of the current main file's directory.
     
     Args:
     - default_long_Str (str): A long string representing the default configuration
@@ -158,16 +158,16 @@ def cheack_config(default_long_Str):
     Example Usage:
     >>> default_config = "This is the default configuration"
     >>> check_config(default_config)
-    '/path/to/main_dir/cfg/config.ini'
+    '/path/to/main_dir/config/config.ini'
     """
     main_file = sys.modules['__main__'].__file__
     main_dir = os.path.dirname(main_file)
-    config_path =  Folder_gen("cfg", main_dir)
+    config_path =  Folder_gen("config", main_dir)
     config_path = Create_File("config.ini", config_path, default_long_Str)
     return config_path
 
 if __name__ == "__funktion__":
-    log("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
+    print("__function should not be executed when the file is imported as a module.\nThis was not the case!", "r")
 else:
     cheack_config("""[default]
 folder = C:\\
@@ -176,3 +176,43 @@ folder = C:\\
 github_user = Git_User
 discord_link = discord.gg
 discord_ID = 123""")
+    
+
+def add_text_to_image(img_path_in, img_path_out, font_path, text):
+    # Bild laden
+    img = Image.open(img_path_in)
+
+    # Zeichenfläche erstellen
+    draw = ImageDraw.Draw(img)
+
+    # Schriftart laden
+    font_size = 120
+    font = ImageFont.truetype(font_path, size=font_size)
+
+    # Textgröße berechnen (ohne draw.textsize)
+    text_width, text_height = draw.textbbox((0, 0), text, font=font)[:2]
+
+    x_position = 1250
+    y_position = 145
+
+    # Text auf das Bild zeichnen
+
+    text = re.sub(r'[^a-zA-Z0-9 ]', ' ', text)
+
+    draw.text((x_position +10 , y_position+ 10), text, font=font, fill=(0, 0, 0))
+    draw.text((x_position, y_position), text, font=font, fill=(255, 157, 158))
+    
+    img.save(img_path_out)
+    img.show()
+
+
+def add_license(license_path, license_destination_path):
+    try:
+        # Copy the license file from license_path to license_destination_path
+        license_destination_path = license_destination_path+"/LICENSE"
+        shutil.copy(license_path, license_destination_path)
+        print(f"License successfully copied from {license_path} to {license_destination_path}.")
+    except FileNotFoundError:
+        print("Error: The specified license file was not found.")
+    except PermissionError:
+        print("Error: Access denied. Please check permissions.")

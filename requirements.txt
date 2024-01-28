@@ -5,5 +5,4 @@ webbrowser
 configparser
 logNow
 pyautogui
-logNow
 pandas.io

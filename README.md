@@ -6,7 +6,6 @@
 
 <center>
 
-# New_py_Code
 </center>
 
 <p align="center">
@@ -50,7 +49,7 @@ run Code New_py_Code.py
 ```
 
 ## Example
-Files/ folders created by New_py_Code: 
+Files folders created by New_py_Code: 
 ```folder
 Test123/
 ┣ README_img/
@@ -58,7 +57,7 @@ Test123/
 ┣ test/
 ┃ ┗ test.py
 ┣ Test123/
-┃ ┣ cfg/
+┃ ┣ config/
 ┃ ┃ ┗ config.ini
 ┃ ┣ util/
 ┃ ┃ ┣ __funktion__.py
@@ -115,7 +114,6 @@ Test123/
     git push o main
     ```
 - [ ] Delete all folders and files you no longer need.
-- [ ] If necessary, change `log("str)` to `print("str")` or delete the `print()` directly.
 - [ ] Check your code and files for missing dokus. *ChatGPT kann dir die arbeit abnehmen use: 
     ```ChatGPT promt:
         write me a .py docstr ("""""") with the content: 
@@ -155,6 +153,9 @@ Test123/
 
 
 ## Lizenz
+
+[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
+
 
 MIT License
 

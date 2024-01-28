@@ -1,6 +1,8 @@
 from util.__funktion__ import *
 import pyautogui
 import sys
+from datetime import datetime
+
 
 def add_image_to_markdown(Alt_Text, path, link):
     """
@@ -17,9 +19,9 @@ def add_image_to_markdown(Alt_Text, path, link):
     add_imge_code = f"[![{Alt_Text}]({path})]({link})"
     return add_imge_code
 
-def readme_gen (name, save_path, Readme_top, readme_img_folder, config_dir, ):
+def readme_gen (name, save_path, Readme_top, readme_img_folder, config_dir, font_path):
 
-    # var
+    date_str = datetime.now().strftime("%d.%B.%Y")
     Full_readme_str =""
     Git_owner = read_config(config_dir, "readme", "github_user")
     repro_Git_owner = Git_owner
@@ -29,16 +31,14 @@ def readme_gen (name, save_path, Readme_top, readme_img_folder, config_dir, ):
     py_version = sys.version.split()[0]
 
     path_banner_img = copy_image(Readme_top, readme_img_folder)
+
+    add_text_to_image(Readme_top, f"{readme_img_folder}\Readme_top.png", font_path,  name)
+
     path_banner_img += os.path.sep + "Readme_top.png"
     readme_code = ""
 
+    readme_code += add_image_to_markdown(f"github/{Git_owner}/{name}", f"https://raw.githubusercontent.com/{Git_owner}/{name}/main/README_img/Readme_top.png", f"https://github.com/{Git_owner}/{name}")+"\n"
 
-    
-
-    readme_code += add_image_to_markdown(f"github/{Git_owner}", f"https://raw.githubusercontent.com/{Git_owner}/{name}/main/README_img/Readme_top.png", f"https://github.com/{Git_owner}")+"\n"
-
-
-    readme_code += f"\n# {name}\n\n"
     badge_line = ""
 
     Alt_text = f"downloads/total"
@@ -83,7 +83,8 @@ def readme_gen (name, save_path, Readme_top, readme_img_folder, config_dir, ):
 + [Demo / Working](#demo)
 + [Install](#usage)
 + [How it works](#Use)
-+ [Lizenz](#Lizenz)"""
++ [Buy me a coffee](#coffee)
++ [LICENSE](#LICENSE)"""
 
     readme_code += Table_of_Contents +"\n"
 
@@ -103,28 +104,19 @@ cd <local path of {name}>
 python {name}.py
 ```
 
-## 📚 Lizenz <a name = "Lizenz"></a>
-MIT License
+## ☕ Buy me a coffee <a name = "coffee"></a>
 
-Copyright (c) 2023 {Git_owner}
-<small><small><small>
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Feel free to show your appreciation by treating me to a virtual coffee. Your support means a lot and keeps the creative coding vibes going! 🚀
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+[![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=Napo_II&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/Napo_II)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE
+## 📚 LICENSE <a name = "LICENSE"></a>
+
+[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
+
+[{name}]({name}) was created on {date_str} by [{Git_owner}](https://github.com/{Git_owner})
+
+
     """
     readme_code += rest_fill +"\n"
 

@@ -2,7 +2,7 @@
 **/build/
 **/dist/
 **/log/
-**/cfg/
+**/config/
 .vscode/*
 **/__pycache__/
 *.ini
