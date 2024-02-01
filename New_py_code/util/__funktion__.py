@@ -200,7 +200,7 @@ def add_text_to_image(img_path_in, img_path_out, font_path, text):
     text = re.sub(r'[^a-zA-Z0-9 ]', ' ', text)
 
     draw.text((x_position +10 , y_position+ 10), text, font=font, fill=(0, 0, 0))
-    draw.text((x_position, y_position), text, font=font, fill=(255, 157, 158))
+    draw.text((x_position, y_position), text, font=font, fill=(207, 63, 117))
     
     img.save(img_path_out)
     img.show()

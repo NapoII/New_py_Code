@@ -32,8 +32,7 @@ util_folder = Folder_gen("util", py_name_folder)
 full_doku_on_str = f'"""Full Doku on: https://github.com/{gituser_default}/{new_py_name}"'
 
 __init__temp = full_doku_on_str
-__init__temp += Read_File_Out(file_path + os.path.sep +
-                              "Templates" + os.path.sep + "__init__-temp.txt")
+__init__temp += Read_File_Out(file_path + os.path.sep +"Templates" + os.path.sep + "__init__-temp.txt")
 __init__temp += f" \"{gituser_default}\""
 Create_File("__init__.py", util_folder, __init__temp)
 
