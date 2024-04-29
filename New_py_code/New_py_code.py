@@ -48,7 +48,7 @@ Create_File("config.ini", config_folder, config_temp)
 __main__temp = full_doku_on_str
 __main__temp += Read_File_Out(file_path + os.path.sep +
                               "Templates" + os.path.sep + "__main__-temp.txt")
-__main__temp += f"# {new_py_name}.py\nprint(f'Programme has been started!','green')\n"
+__main__temp += f"# {new_py_name}.py\nprint(f'Programme has been started!')\n"
 Create_File(f"{new_py_name}.py", py_name_folder, __main__temp)
 
 gitignor = f"/{new_py_name}.egg-info"
@@ -95,4 +95,4 @@ Create_File(f"setup.py", projekt_folder, setup_py_content)
 
 webbrowser.open('file:///' + projekt_folder)
 clipboard.copy(projekt_folder)
-print("The project was created and the folder address was added to the clipboard..", "g")
+print("The project was created and the folder address was added to the clipboard..")

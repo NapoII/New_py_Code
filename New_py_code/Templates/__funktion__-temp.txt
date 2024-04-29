@@ -65,64 +65,61 @@ def new_path(base_path, *additional_paths):
 def read_config(config_dir, section, option, arg=None):
     """Reads a configuration file and returns the specified value as the desired data type.
 
-Args:
-- config_dir (str): The directory where the configuration file is located.
-- section (str): The section of the configuration file where the option is located.
-- option (str): The option to retrieve from the configuration file.
-- arg (str, optional): The desired data type of the retrieved value. Can be "float", "int", or "tuple". Defaults to None.
+    Args:
+    - config_dir (str): The directory where the configuration file is located.
+    - section (str): The section of the configuration file where the option is located.
+    - option (str): The option to retrieve from the configuration file.
+    - arg (str, optional): The desired data type of the retrieved value. Can be "float", "int", "tuple", or "boolean". Defaults to None.
 
-Returns:
-- If arg is not provided: the value of the specified option as a string.
-- If arg is "float": the value of the specified option as a float.
-- If arg is "int": the value of the specified option as an integer.
-- If arg is "tuple": the value of the specified option as a tuple of integers.
+    Returns:
+    - If arg is not provided: the value of the specified option as a string.
+    - If arg is "float": the value of the specified option as a float.
+    - If arg is "int": the value of the specified option as an integer.
+    - If arg is "tuple": the value of the specified option as a tuple of integers.
+    - If arg is "boolean": the value of the specified option as a boolean.
 
-Example Usage:
->>> read_config("config.ini", "database", "port")
-'5432'
+    Example Usage:
+    >>> read_config("config.ini", "database", "port")
+    '5432'
 
->>> read_config("config.ini", "database", "port", "int")
-5432
+    >>> read_config("config.ini", "database", "port", "int")
+    5432
 
->>> read_config("config.ini", "database", "credentials", "tuple")
-(123456, 'password')
-"""
+    >>> read_config("config.ini", "database", "credentials", "tuple")
+    (123456, 'password')
 
+    >>> read_config("config.ini", "database", "enabled", "bool")
+    True
+    """
+    config = ConfigParser()
+    config.read(config_dir)
+    load_config = config[section][option]
+    if arg:
+        arg = arg.lower()
+    
     if arg == "float":
-        config = ConfigParser()
-        config.read(config_dir)
-        load_config = (config[section][option])
         config_float = float(load_config)
-        print(f"Config loaded: [ ({option})  = ({config_float}) ] conv to float", "g")
+        print(f"Config loaded: [ ({option})  = ({config_float}) ] conv to float")
+        return config_float
 
-        return config_int
-    if arg == "int":
-        config = ConfigParser()
-        config.read(config_dir)
-        load_config = (config[section][option])
+    elif arg == "int":
         config_int = int(load_config)
-        print(f"Config loaded: [ ({option})  = ({config_tuple}) ] conv to int", "g")
-
+        print(f"Config loaded: [ ({option})  = ({config_int}) ] conv to int")
         return config_int
     
-    if arg == "tuple":
-        config = ConfigParser()
-        config.read(config_dir)
-        load_config = (config[section][option])
+    elif arg == "tuple":
         config_tuple = tuple(map(int, load_config.split(",")))
-        print(f"Config loaded: [ ({option})  = ({config_tuple}) ] conv to tuple", "g")
-
+        print(f"Config loaded: [ ({option})  = ({config_tuple}) ] conv to tuple")
         return config_tuple
     
+    elif arg == "boolean" or arg == "bool":
+        config_bool = load_config.lower() in ['true', '1', 'yes', 'y']
+        print(f"Config loaded: [ ({option})  = ({config_bool}) ] conv to boolean")
+        return config_bool
+    
     else:
-        config = ConfigParser()
-        config.read(config_dir)
-        load_config = (config[section][option])
-
-        print(f"Config loaded: [ ({option})  = ({load_config}) ]", "g")
-
+        print(f"Config loaded: [ ({option})  = ({load_config}) ]")
         return load_config
-
 
 def write_config(config_dir, section, Key, option):
     """
